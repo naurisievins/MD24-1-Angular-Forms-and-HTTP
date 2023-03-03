@@ -2,7 +2,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Animal } from '../animal-list/animal-list.component';
-import { HttpService } from '../services/http.service';
 
 @Component({
   selector: 'app-form',
@@ -20,7 +19,7 @@ export class FormComponent {
   types: string[] = ['Cat', 'Dog'];
   default: string = 'Cat';
 
-  constructor(private fb: FormBuilder, private httpService: HttpService) {
+  constructor(private fb: FormBuilder) {
     this.animalForm.controls['type'].setValue(this.default, {
       onlySelf: true,
     });

@@ -15,20 +15,19 @@ body {
   width: 100%;
   padding: 10px;
   margin: 0 auto;
-
-      background: url(/assets/images/bg.jpg) no-repeat center center fixed;
-      background-size: cover;
+  background: url(/assets/images/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 button {
   border-radius: 5px;
   padding: 5px 15px;
-  border: 1px solid rgb(173, 107, 62);
-  background-color: rgba(172, 71, 13, 0.438);
+  border: 1px solid rgba(59, 59, 59, 0.623);
+  background-color: rgba(13, 172, 26, 0.671);
   cursor: pointer;
   &:hover {
     opacity: 0.8;
-    border: 1px solid rgb(139, 64, 14);
+    border: 1px solid rgb(61, 61, 60);
   }
 }
 

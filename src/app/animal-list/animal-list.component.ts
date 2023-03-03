@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { HttpService } from '../services/http.service';
 import { Output, EventEmitter } from '@angular/core';
 
 export type Animal = {

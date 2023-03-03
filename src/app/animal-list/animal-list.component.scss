@@ -18,6 +18,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .list_container__type {
