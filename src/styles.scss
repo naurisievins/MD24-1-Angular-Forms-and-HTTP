@@ -9,6 +9,9 @@
 
 body {
   background-color: rgba(205, 134, 63, 0.61);
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 button {
@@ -21,4 +24,8 @@ button {
     opacity: 0.8;
     border: 1px solid rgb(139, 64, 14);
   }
+}
+
+app-animal-list {
+  width: 100%;
 }

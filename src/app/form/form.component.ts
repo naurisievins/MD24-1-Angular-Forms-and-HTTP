@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -7,15 +8,17 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
-  name = new FormControl('');
-  type = new FormControl('');
+  animalForm = this.fb.group({
+    name: ['', Validators.required],
+    type: ['', Validators.required],
+  });
 
   types: string[] = ['Cat', 'Dog'];
 
-  onSubmit($event: Event) {
-    $event.preventDefault();
-    console.log(this.name.value);
-    console.log(this.type.value);
-    return false;
+  constructor(private fb: FormBuilder) {}
+
+  onSubmit() {
+    console.log('form submited');
+    console.log(this.animalForm.value);
   }
 }

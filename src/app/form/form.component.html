@@ -1,26 +1,24 @@
-<div class="form_container">
-  <form (submit)="onSubmit($event)">
-    <label>
-      <span>Name: </span>
-      <input 
-        class="form_container__input" 
-        type="text"
-        [formControl]="name" 
-        placeholder="Add new animal..."
-        required
-        
-      >
-    </label>
+<form
+  class="form_container"
+  [formGroup]="animalForm"
+  (ngSubmit)="onSubmit()"
+>
+  <label>
+    <span>Name: </span>
+    <input 
+      class="form_container__input" 
+      type="text"
+      formControlName="name" 
+      placeholder="Add new animal..."       
+    >
+  </label>
 
-  <select [formControl]="type">
-    <!-- <option [ngValue]="null" disabled>Choose your profile</option> -->
-    <option *ngFor="let type of types; index as i" [ngValue]="type" [selected]="i===1">
-      {{ type }}
-    </option>
-  </select>
+<select formControlName="type">
+  <!-- <option [ngValue]="null" disabled>Choose your profile</option> -->
+  <option *ngFor="let type of types" [ngValue]="type">
+    {{ type }}
+  </option>
+</select>
 
-    {{type.value}}
-
-    <button type="submit">Add</button>
-  </form>
-</div>
+  <button type="submit" [disabled]="!animalForm.valid">Add</button>
+</form>
