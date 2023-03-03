@@ -1,5 +1,8 @@
 <div class="container">
-  <app-switch></app-switch>
-  <app-form></app-form>
-  <app-animal-list></app-animal-list>
+  <app-switch (showCatsEvent)="getCatsData($event)"></app-switch>
+  <app-form (addAnimalEvent)="onAddAnimal($event)"></app-form>
+  <app-animal-list 
+    [animals]="animals" 
+    (deleteAnimalEvent)="onDelete($event)">
+  </app-animal-list>
 </div>

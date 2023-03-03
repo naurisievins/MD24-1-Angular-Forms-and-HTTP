@@ -1,7 +1,10 @@
 <div class="list_container">
-  <div class="list_container__item">
-    <span class="list_container__type">type</span>
-    <span class="list_container__name">name</span>
-    <div class="list_container__delete_btn">x</div>
+  <div 
+    class="list_container__item"
+    *ngFor="let animal of animals"
+  >
+    <span class="list_container__type">{{animal.type}}</span>
+    <span class="list_container__name">{{animal.name}}</span>
+    <div class="list_container__delete_btn" (click)="handleDeleteAnimal(animal._id)">x</div>
   </div>
 </div>
