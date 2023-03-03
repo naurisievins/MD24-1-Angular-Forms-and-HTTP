@@ -1,0 +1,12 @@
+.form_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form_container__input {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid rgb(46, 44, 44);
+}
+

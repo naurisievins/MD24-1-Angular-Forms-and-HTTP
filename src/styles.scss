@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  background-color: rgba(205, 134, 63, 0.61);
+}
+
+button {
+  border-radius: 5px;
+  padding: 5px 15px;
+  border: 1px solid rgb(173, 107, 62);
+  background-color: rgba(172, 71, 13, 0.438);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+    border: 1px solid rgb(139, 64, 14);
+  }
+}
