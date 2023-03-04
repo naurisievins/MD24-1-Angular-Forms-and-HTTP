@@ -17,7 +17,7 @@ export class HttpService {
   }
 
   postAnimal(body: Omit<Animal, '_id'>) {
-    return this.http.post('http://localhost:3004/post-animal', body);
+    return this.http.post<Animal>('http://localhost:3004/post-animal', body);
   }
 
   deleteAnimal(id: string) {

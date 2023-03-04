@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Animal } from './animal-list/animal-list.component';
 import { HttpService } from './services/http.service';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -44,17 +43,14 @@ export class AppComponent {
   }
 
   onAddAnimal(animal: Omit<Animal, '_id'>) {
-    this.httpService
-      .postAnimal(animal)
-      .pipe(switchMap(() => this.httpService.getAnimals()))
-      .subscribe(
-        (response) => {
-          this.animals = response;
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+    this.httpService.postAnimal(animal).subscribe(
+      (response) => {
+        this.animals.push(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   onDelete(id: string) {
