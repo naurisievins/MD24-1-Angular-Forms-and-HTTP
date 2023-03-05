@@ -1,0 +1,8 @@
+<div class="wrapepr">
+  <app-switch (showCatsEvent)="getCatsData($event)"></app-switch>
+  <app-form (addAnimalEvent)="onAddAnimal($event)"></app-form>
+  <app-animal-list 
+    [animals]="animals"
+    (deleteAnimalEvent)="onDelete($event)">
+  </app-animal-list>
+</div>

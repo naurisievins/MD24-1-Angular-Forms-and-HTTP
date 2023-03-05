@@ -1,8 +1,9 @@
 <div class="container">
-  <app-switch (showCatsEvent)="getCatsData($event)"></app-switch>
-  <app-form (addAnimalEvent)="onAddAnimal($event)"></app-form>
-  <app-animal-list 
-    [animals]="animals" 
-    (deleteAnimalEvent)="onDelete($event)">
-  </app-animal-list>
+  <nav>
+    <ul>
+      <li routerLink="/">Aniamls</li>
+      <li routerLink="/todo">Todo</li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
 </div>

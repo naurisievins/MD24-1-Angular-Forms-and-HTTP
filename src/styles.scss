@@ -31,10 +31,78 @@ button {
   }
 }
 
-app-animal-list {
-  width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-app-switch {
+
+ul {
+  display: flex;
   width: 100%;
+  margin: auto;
+  max-width: 1000px;
+  justify-content: space-between;
+  text-align: center;
+}
+
+li {
+  padding: 1rem 2rem 1.15rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #ebebeb;
+  min-width: 80px;
+  margin: auto;
+}
+
+li:hover {
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/011/888/075/small/neumorphic-rectangle-button-free-png.png');
+  background-size: 100% 100%;
+  color: #27262c;
+  animation: spring 300ms ease-out;
+  text-shadow: 0 -1px 0 orange;
+  font-weight: bold;
+}
+
+li:active {
+  transform: translateY(4px);
+}
+
+@keyframes spring {
+  15% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.2, 1.1);
+  }
+
+  40% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(0.95, 0.95);
+  }
+
+  75% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.05, 1);
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+.shameless-plug {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  padding: 8px 20px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  background-color: rgba(255, 166, 0, 0.185);
+    box-shadow: 0 0 5px 2px rgba(255, 166, 0, 0.192);
+      padding: 10px;
 }

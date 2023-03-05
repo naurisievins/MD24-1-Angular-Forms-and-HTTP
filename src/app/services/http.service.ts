@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Animal } from '../animal-list/animal-list.component';
+import { Animal } from '../pages/animals/components/animal-list/animal-list.component';
 
 @Injectable({
   providedIn: 'root',

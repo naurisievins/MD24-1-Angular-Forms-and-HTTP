@@ -1,0 +1,22 @@
+<form
+  class="form_container"
+  [formGroup]="todoForm"
+  (ngSubmit)="handleAddTodo()"
+>
+  <label>
+    <span>Todo: </span>
+
+    <input
+      class="form_container__input"
+      type="text" formControlName="todo"
+      placeholder="Add new todo...">
+  </label>
+
+  <button 
+    type="submit" 
+    [disabled]="!todoForm.valid"
+  >
+    Add
+</button>
+
+</form>

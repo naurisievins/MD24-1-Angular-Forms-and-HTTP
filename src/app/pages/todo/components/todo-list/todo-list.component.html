@@ -1,0 +1,8 @@
+<div class="list_container">
+  <ng-container *ngIf="(tasks$ | async) as tasks">
+    <div class="list_container__item" *ngFor="let task of tasks">
+      <span class="list_container__name">{{task}}</span>
+      <div class="list_container__delete_btn">x</div>
+    </div>
+  </ng-container>
+</div>
