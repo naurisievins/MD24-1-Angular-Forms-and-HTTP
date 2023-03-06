@@ -1,8 +1,13 @@
 # MD24-1-Angular-Forms-and-HTTP-front
 
-### Simple animal application where you can add animals
+### Simple angular aplication with:
+- routing
+- ngrx store
+- HTTP client
 
-<img src="https://upload.cc/i1/2023/03/04/tBWMpS.jpeg" alt="App preview" width="600px" />
+<img src="https://upload.cc/i1/2023/03/06/WsDRPG.jpeg" alt="App preview" width="600px" />
+
+<img src="https://upload.cc/i1/2023/03/06/8WONwL.jpeg" alt="App preview" width="600px" />
 
 Run `npm install` and then `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
