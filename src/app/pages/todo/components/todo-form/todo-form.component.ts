@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { addTodo } from 'src/app/Store/todo/todo.actions';
+import { ToDoState, ToDo } from 'src/app/Store/todo/todo.action';
+import * as ToDoActions from '../../../../Store/todo/todo.action';
 
 @Component({
   selector: 'app-todo-form',
@@ -10,26 +10,27 @@ import { addTodo } from 'src/app/Store/todo/todo.actions';
   styleUrls: ['./todo-form.component.scss'],
 })
 export class TodoFormComponent {
-  tasks$: Observable<string[]>;
-
-  todoForm = this.fb.group({
-    todo: ['', Validators.required],
-  });
-
   constructor(
     private fb: FormBuilder,
-    private store: Store<{ tasks: string[] }>
-  ) {
-    this.tasks$ = store.select('tasks');
-  }
+    private store: Store<{ todos: ToDoState }>
+  ) {}
 
-  handleAddTodo() {
-    const todo = this.todoForm.value.todo || '';
+  handleAddToDo() {
+    const todo: ToDo = {
+      title: this.todoForm.value.title || '',
+      content: this.todoForm.value.content || '',
+    };
 
-    this.store.dispatch(addTodo({ newTask: todo }));
+    this.store.dispatch(ToDoActions.BeginCreateToDoAction({ payload: todo }));
 
     this.todoForm.patchValue({
-      todo: '',
+      title: '',
+      content: '',
     });
   }
+
+  todoForm = this.fb.group({
+    title: ['', Validators.required],
+    content: ['', Validators.required],
+  });
 }
