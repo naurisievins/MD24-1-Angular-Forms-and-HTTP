@@ -14,7 +14,9 @@ import { TodoListComponent } from './pages/todo/components/todo-list/todo-list.c
 import { TodoFormComponent } from './pages/todo/components/todo-form/todo-form.component';
 
 import { StoreModule } from '@ngrx/store';
-import { todoReducer } from './Store/todo/todo.reducer';
+import { ToDoReducer } from './Store/todo/todo.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { ToDoEffects } from './Store/todo/todo.effect';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { todoReducer } from './Store/todo/todo.reducer';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot({ tasks: todoReducer }),
+    //StoreModule.forRoot({ tasks: ToDoReducer }),
+    StoreModule.forRoot({ todos: ToDoReducer }),
+    EffectsModule.forRoot([ToDoEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],

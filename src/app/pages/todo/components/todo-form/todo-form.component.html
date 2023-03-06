@@ -1,15 +1,29 @@
 <form
   class="form_container"
   [formGroup]="todoForm"
-  (ngSubmit)="handleAddTodo()"
+  (ngSubmit)="handleAddToDo()"
 >
   <label>
-    <span>Todo: </span>
+    <span>Title: </span>
 
     <input
       class="form_container__input"
-      type="text" formControlName="todo"
-      placeholder="Add new todo...">
+      type="text"
+      formControlName="title"
+      placeholder="Add new todo..."
+    >
+  </label>
+
+  <label>
+    <span>Content: </span>
+
+    <input
+      class="form_container__input"
+      type="text"
+      formControlName="content"
+      placeholder="Add new todo..."
+    >
+    
   </label>
 
   <button 

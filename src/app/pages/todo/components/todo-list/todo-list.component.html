@@ -1,8 +1,14 @@
 <div class="list_container">
-  <ng-container *ngIf="(tasks$ | async) as tasks">
-    <div class="list_container__item" *ngFor="let task of tasks">
-      <span class="list_container__name">{{task}}</span>
-      <div class="list_container__delete_btn">x</div>
+  
+  <div *ngIf="todoError !== null && todoError.message">
+    <div class="alert" role="alert">
+      <span>Some error occurred. Please try again.</span>
     </div>
-  </ng-container>
+  </div>
+
+  <div class="list_container__item" *ngFor="let todo of ToDoList">
+    <span class="list_container__name">{{todo.title}}</span>
+    <span>{{todo.content}}</span>
+    <div class="list_container__delete_btn" (click)="handleDeleteToDo(todo._id!)">x</div>
+  </div>
 </div>
