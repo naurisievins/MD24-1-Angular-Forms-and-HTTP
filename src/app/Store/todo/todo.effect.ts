@@ -70,4 +70,24 @@ export class ToDoEffects {
       )
     )
   );
+
+  markToDoAsDone$: Observable<Action> = createEffect(() =>
+    this.action$.pipe(
+      ofType(ToDoActions.BeginMarkToDoAsDone),
+      mergeMap((action) =>
+        this.http
+          .put(`http://localhost:3004/is-done-todo/${action.payload}`, {})
+          .pipe(
+            map(() => {
+              return ToDoActions.MarkToDoAsDone({
+                payload: action.payload,
+              });
+            }),
+            catchError((error: Error) => {
+              return of(ToDoActions.ErrorToDoAction(error));
+            })
+          )
+      )
+    )
+  );
 }

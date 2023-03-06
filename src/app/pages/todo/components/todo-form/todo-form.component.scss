@@ -1,11 +1,17 @@
 .form_container {
   background-color: rgb(255 255 255 / 25%);
   padding: 20px;
-  border: 1px solid rgb(27, 26, 26);
+  border: 2px solid white;
   border-radius: 7px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
+}
+
+.form_container > label {
+  display: flex;
+  flex-direction: column;
 }
 
 .form_container__input {
@@ -13,3 +19,17 @@
   padding: 5px;
   border: 1px solid rgb(46, 44, 44);
 }
+
+.form_container__input:active {
+  border: none;
+  outline: none;
+}
+
+form.ng-dirty input.ng-invalid {
+  border-left: 4px solid rgb(114, 17, 17);
+}
+
+form.ng-dirty input.ng-valid {
+  border-left: 4px solid rgb(20, 77, 15);
+}
+

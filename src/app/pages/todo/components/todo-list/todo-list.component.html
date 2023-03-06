@@ -6,9 +6,10 @@
     </div>
   </div>
 
-  <div class="list_container__item" *ngFor="let todo of ToDoList">
-    <span class="list_container__name">{{todo.title}}</span>
-    <span>{{todo.content}}</span>
-    <div class="list_container__delete_btn" (click)="handleDeleteToDo(todo._id!)">x</div>
+  <div class="list_container__item" *ngFor="let todo of ToDoList" (click)="handleToDoDone(todo._id!)">
+      <span [ngClass]="{'done': todo.done}" class="list_container__title">{{todo.title}}</span>
+      <span [ngClass]="{'done': todo.done}" class="list_container__content">{{todo.content}}</span>
+      <div class="list_container__delete_btn" (click)="handleDeleteToDo(todo._id!)">x</div>
+      <span class="list_container__date">{{todo.date}}</span>
   </div>
 </div>

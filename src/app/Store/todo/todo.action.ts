@@ -61,4 +61,14 @@ export const SuccessDeleteToDoAction = createAction(
   props<{ payload: String }>()
 );
 
+export const BeginMarkToDoAsDone = createAction(
+  '[ToDo] - Begin Mark ToDo as Done',
+  props<{ payload: String }>()
+);
+
+export const MarkToDoAsDone = createAction(
+  '[ToDo] - Mark ToDo as Done',
+  props<{ payload: String }>()
+);
+
 export const ErrorToDoAction = createAction('[ToDo] - Error', props<Error>());

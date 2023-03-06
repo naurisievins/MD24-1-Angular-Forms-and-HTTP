@@ -36,6 +36,10 @@ export class TodoListComponent implements OnInit {
     this.store.dispatch(ToDoActions.BeginDeleteToDoAction({ payload: id }));
   }
 
+  handleToDoDone(id: string) {
+    this.store.dispatch(ToDoActions.BeginMarkToDoAsDone({ payload: id }));
+  }
+
   ngOnDestroy() {
     if (this.ToDoSubscription) {
       this.ToDoSubscription.unsubscribe();
