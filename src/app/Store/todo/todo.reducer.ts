@@ -40,7 +40,6 @@ const reducer = createReducer(
     if (index === -1) {
       return state;
     }
-    console.log(123);
     const todoToUpdate = state.ToDos[index];
     const updatedTodo = { ...todoToUpdate, done: !todoToUpdate.done };
     const updatedToDos = [...state.ToDos];

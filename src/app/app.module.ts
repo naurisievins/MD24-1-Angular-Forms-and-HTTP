@@ -34,7 +34,6 @@ import { ToDoEffects } from './Store/todo/todo.effect';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    //StoreModule.forRoot({ tasks: ToDoReducer }),
     StoreModule.forRoot({ todos: ToDoReducer }),
     EffectsModule.forRoot([ToDoEffects]),
   ],

@@ -17,16 +17,6 @@ export const initializeState = (): ToDoState => {
   return { ToDos: Array<ToDo>(), ToDoError: null };
 };
 
-export const addTodo = createAction(
-  '[todo Component] Add ToDo',
-  props<{ newTask: string }>()
-);
-
-export const deleteTodo = createAction(
-  '[todo Component] Delete Todo',
-  props<{ id: string }>()
-);
-
 export const GetToDoAction = createAction('[ToDo] - Get ToDo');
 
 export const CreateToDoAction = createAction(
